@@ -1,0 +1,84 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <!-- build:css styles/vendor.css -->
+        <!-- bower:css -->
+        <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
+        <!-- endbower -->
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+        <link href="style/main.css" rel="stylesheet" type="text/css"/>
+        <!-- endbuild -->
+        <!-- build:css({.tmp,app}) styles/main.css -->
+        <!-- endbuild -->
+    </head>
+    <body role="application">
+        <script>
+            function controller($scope) {
+                $scope.value =  {texto: 'Portugues', id: '123 '};
+
+                $scope.submit = function() {
+                    $scope.submitted = true;
+                    if ($scope.form.$valid) {
+                        alert("valid");
+                    } else {
+                        alert("invalid");
+                    }
+                };
+
+                $scope.click = function() {
+                    console.log("Selecionados: " + $scope.user);
+                };
+
+                $scope.validar = function() {
+                  if($scope.user){
+                    return 'warning';
+                  }
+                  return '';
+                };
+            }
+        </script>
+        <form ng-app="booleanCheckbox" name="form" novalidate
+              ng-controller="controller"
+              ng-submit="submit()">
+
+            <div class="panel-body">{{user}}
+                <inep-boolean-checkbox
+                    np-id="booleanCheck"
+                    np-label="Selecione uma opcao abaixo:"
+                    np-value="'Portugues'"
+                    np-selected-value="user"
+                    np-optional="false" inep-validator="validar()"
+                    np-validator-message="teste"
+                    np-on-change="click()">
+                </inep-boolean-checkbox>
+                <div class="row">
+                    <input type='submit' ></input>
+                </div>
+            </div>
+        </form>
+
+        <!-- build:js scripts/vendor.js -->
+        <!-- bower:js -->
+        <script src="bower_components/jquery/dist/jquery.js"></script>
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="bower_components/inep-infraestrutura/src/scripts/modules/inepInfraestrutura.js"></script>
+        <script src="bower_components/inep-infraestrutura/src/scripts/services/aplicacaoService.js"></script>
+        <script src="bower_components/inep-infraestrutura/src/scripts/directives/inepVersionDirective.js"></script>
+        <script src="bower_components/inep-infraestrutura/src/scripts/directives/inepValidatorDirective.js"></script>
+        <script src="bower_components/inep-infraestrutura/src/scripts/services/inepVersionService.js"></script>
+        <script src="bower_components/inep-infraestrutura/src/scripts/services/storageService.js"></script>
+        <script src="bower_components/inep-infraestrutura/src/scripts/filters/inepOrderByFilter.js"></script>
+        <!-- endbower -->
+        <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+        <!-- endbuild -->
+
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/directive/booleanCheckboxDirective.js"></script>
+        <script src="scripts/directive/booleanCheckboxModel.js"></script>
+        <!-- endbuild -->
+    </body>
+</html>

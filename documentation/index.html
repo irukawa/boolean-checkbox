@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"></html>
+<![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"></html>
+<![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"></html>
+<![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+    <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <!--[if IE]>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <![endif]-->
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        <!-- stylesheets-->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+        <link href="assets/css/docs.css" rel="stylesheet">
+        <link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+        <link href="assets/css/main.css" rel="stylesheet">
+    </head>
+    <body data-spy="scroll" data-target=".bs-docs-sidebar">
+        <div id="content" class="bs-header">
+            <div class="container">
+                <h1>boolean-checkbox</h1>
+            </div>
+        </div>
+        <div class="container bs-docs-container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="bs-sidebar hidden-print">
+                        <ul class="nav bs-sidenav">
+                            <li><a href="#intro">Introdu&ccedil;&atilde;o</a></li>
+                            <li><a href="#historico">Hist&oacute;rico de altera&ccedil;&otilde;es</a></li>
+                            <li><a href="#como_utilizar">Como utiliz&aacute;-lo?</a></li>
+                            <li><a href="#parametros">Par&acirc;metros</a></li>
+                            <li><a href="#exemplo">Exemplo</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div role="main" class="col-md-9">
+                    <!-- Introducao -->
+                    <section id="intro">
+                        <div class="page-header">
+                            <h1>Introdu&ccedil;&atilde;o</h1>
+                        </div>
+                        <p class="lead">boolean-checkbox &eacute; o componente que inclui na
+                            p&aacute;gina apenas um checkbox.
+                        </p>
+                    </section>
+
+                    <!-- Historico -->
+                    <section id="historico">
+                        <div class="page-header">
+                            <h1>Hist&oacute;rico de altera&ccedil;&otilde;es</h1>
+                        </div>
+                        <p class="lead">Vers&atilde;o 1.0.2</p>
+                        <ul>
+                          <li>[BUG FIXED] Atualização do model no evento click e change.</li>
+                        </ul>
+                        <p class="lead">Vers&atilde;o 1.0.1</p>
+                        <ul>
+                            <li>Atributo np-object-value adicionado.</li>
+                        </ul>
+                        <p class="lead">Vers&atilde;o 1.0.0</p>
+                        <ul>
+                            <li>Vers&atilde;o inicial</li>
+                        </ul>
+                    </section>
+
+                    <!-- Como utiliza-lo -->
+                    <section id="como_utilizar">
+                        <div class="page-header">
+                            <h1>Como utiliz&aacute;-lo?</h1>
+                        </div>
+                        <p class="lead">Antes de come&ccedil;ar, &eacute; necess&aacute;rio instalar
+                            as seguites ferramentas:
+                        </p>
+                        <ul>
+                            <li>Node.js (vers&atilde;o mais recente).</li>
+                            <li>Bower (vers&atilde;o mais recente).</li>
+                        </ul>
+
+                        <p class="lead">Caso j&aacute; possua as ferramentas instaladas, basta seguir os passos abaixo para começar a desenvolver:</p>
+                        <ol>
+                            <li>No terminal acesse a pasta raiz do projeto.</li>
+                            <li>Execute o comando: <code>bower install --save boolean-checkbox</code>.</li>
+                            <li>Adicione o m&oacute;dulo do componente no <code>app.js</code> da aplica&ccedil;&atilde;o:
+<pre>
+angular.module('app', [
+    'booleanCheckbox'
+]);
+</pre>
+                            <li>Ao final do processamento o bower ter&aacute;
+                                baixado o componente para dentro do projeto.
+                            </li>
+                        </ol>
+                        <p>Todos os arquivos necess&aacute;rios para o funcionamento do componente podem ser encontrados na pasta<strong> PROJETO/bower_components/boolean-checkbox</strong>.</p>
+                    </section>
+
+                    <!-- Como utiliza-lo -->
+                    <section id="parametros">
+                        <div class="page-header">
+                            <h1>Par&acirc;metros</h1>
+                        </div>
+                        <p class="lead">
+                            Os par&acirc;metros abaixo com o tipo em vermelho s&atilde;o obrigat&oacute;rios.
+                        </p>
+                        <table class="table table-bordered table-striped ng-scope">
+                            <thead>
+                                <tr>
+                                    <th>Par&acirc;metro</th>
+                                    <th>Tipo</th>
+                                    <th>Valor padr&atilde;o</th>
+                                    <th>Detalhamento</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>np-id</td>
+                                    <td><span class="label label-danger">string</span></td>
+                                    <td> - </td>
+                                    <td>Esse atributo refere-se ao identificador do componente.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>np-value</td>
+                                    <td><span class="label label-default">string</span></td>
+                                    <td> - </td>
+                                    <td>
+                                        Valor que será exibido para sele&ccedil;&atilde;o.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>np-selected-value</td>
+                                    <td><span class="label label-danger">boolean</span></td>
+                                    <td> - </td>
+                                    <td>
+                                      Valor que será retornado para o modelo.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>np-object-value</td>
+                                    <td><span class="label label-default">object</span></td>
+                                    <td> - </td>
+                                    <td>
+                                      Permite retornar um objeto para o atributo np-selected-value. Se não
+                                      informado o valor retornado será <code>true</code> ou <code>false</code>.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>np-optional</td>
+                                    <td><span class="label label-default">boolean</span></td>
+                                    <td>true</td>
+                                    <td>
+                                        Atributo booleando que diz se o campo ser&aacute; opcional.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>np-label</td>
+                                    <td><span class="label label-default">string</span></td>
+                                    <td> - </td>
+                                    <td>
+                                        T&iacute;tulo que fica em cima do campo.
+                                    </td>
+                                </tr>
+                                 <tr>
+                                    <td>np-size</td>
+                                    <td><span class="label label-default">string</span></td>
+                                    <td>12</td>
+                                    <td>
+                                        Atributo que diz o tamanho do campo, podendo ser de 0 a 12.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>np-disabled</td>
+                                    <td><span class="label label-default">boolean</span></td>
+                                    <td>false</td>
+                                    <td>
+                                        Diz se o campo ficar&aacute; desabilitado para edi&ccedil;&atilde;o.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>np-required-message</td>
+                                    <td><span class="label label-default">string</span></td>
+                                    <td> Campo obrigatório. </td>
+                                    <td>
+                                        Diz qual mensagem ser&aacute; a ser exibida,
+                                        caso o campo seja de preenchimento obrigat&oacute;rio.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>np-on-change</td>
+                                    <td><span class="label label-default">function</span></td>
+                                    <td> - </td>
+                                    <td>
+                                        Fun&ccedil;&atilde;o que ser&aacute; disparada no evento <code>onchange</code>.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>np-on-click</td>
+                                    <td><span class="label label-default">function</span></td>
+                                    <td> - </td>
+                                    <td>
+                                        Fun&ccedil;&atilde;o que ser&aacute; disparada no evento <code>onclick</code>.
+                                    </td>
+                                </tr>
+                                <tr>
+                                  <td>np-accessibility-message</td>
+                                  <td><span class="label label-default">number</span></td>
+                                  <td> - </td>
+                                  <td>
+                                    Esse atributo tem a finalidade de ajudar na acessibilidade dos usu&aacute;rios.
+                                    Quando informado a mensagem ficar&aacute; escondida na tela, por&eacute;m o
+                                    leitor de tela ir&aacute; falar a mensagem toda vez que o campo tiver o foco.
+                                    Essa mensagem deve ser sempre bem explicativa.
+                                  </td>
+                                </tr>
+                                <tr>
+                                    <td>np-validator-message</td>
+                                    <td><span class="label label-default">string</span></td>
+                                    <td>-</td>
+                                    <td>
+                                      Define a mensagem de validação que será exibida
+                                      caso a função ou variável passada na diretiva
+                                        <a href="http://castilho:5678/infraestrutura/documentation/#validator">
+                                          validator</a> invalide o campo.
+                                      </td>
+                                  </tr>
+                            </tbody>
+                        </table>
+                    </section>
+
+                    <!-- Exemplo -->
+                    <section id="exemplo">
+                        <div class="page-header">
+                            <h1>Exemplo</h1>
+                        </div>
+                        <p class="lead">Abaixo um exemplo da utiliza&ccedil;&atilde;o do componente.</p>
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                Pagina HTML
+                            </div>
+                            <div class="panel-footer">
+                                <pre class="prettyprint linenums">
+&lt;boolean-checkbox
+  np-id="booleanCheck"
+  np-label="Selecione uma opcao abaixo:"
+  np-value="value"
+  np-selected-value="user"
+  np-optional="false" validator="validar()"
+  np-validator-message="teste"
+  np-on-click="click()"&gt;
+&lt;/boolean-checkbox&gt;
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                Controller.js
+                            </div>
+                            <div class="panel-footer">
+                                <pre class="prettyprint linenums">
+$scope.value = "Português"
+$scope.submit = function() {
+    $scope.submitted = true;
+    if ($scope.form.$valid) {
+        alert("v&aacute;lido");
+    } else {
+        alert("inv&aacute;lido");
+    }
+}
+$scope.click = function() {
+     console.log("Selecionado: " + $scope.user);
+}
+                                </pre>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <!-- Footer-->
+        <footer class="bs-footer">
+            <div class="container">
+            </div>
+        </footer>
+        <!-- Scripts-->
+        <script src="assets/js/jquery.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+        <script src="assets/js/holder.js"></script>
+        <script src="assets/js/google-code-prettify/prettify.js"></script>
+        <script src="assets/js/jquery.smooth-scroll.js"></script>
+        <script src="assets/js/application.js"></script>
+        <script>
+            $('.bs-sidenav a').smoothScroll();
+            window.prettyPrint && prettyPrint();
+
+        </script>
+    </body>
+</html>

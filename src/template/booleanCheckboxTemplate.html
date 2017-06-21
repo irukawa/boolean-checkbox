@@ -1,0 +1,56 @@
+<div ng-form="formBooleanCheckbox" class="form-group {{sizeClass}}"
+     has-validator
+     ng-class="{'has-error' : (formBooleanCheckbox.$dirty || $parent.submitted) && hasError(),
+     'has-warning': hasWarning(),
+     'has-success': hasSuccess()}">
+        <style>
+            span.hidden-accessibility  {
+                position: absolute;
+                top: -20em;
+                left: -300em;
+            }
+            ul.checkbox   {
+              padding: 0;
+              list-style: none;
+            }
+
+            ul.checkbox li input {
+              margin-right: .25em;
+            }
+        </style>
+        <label id="label_{{npId}}" ng-if="npLabel">{{npLabel}}
+           <span class="hidden-accessibility">{{npAccessibilityMessage}}</span>
+           <i style="color: #9A0000" class="fa fa-asterisk fa" ng-if="isRequired()">
+             <span class="hidden-accessibility">Campo de preenchimento obrigatório.</span>
+           </i>
+           <i ng-if="npAccessibilityMessage"
+            class="fa fa-question-circle"
+            alt="{{npAccessibilityMessage}}" title="{{npAccessibilityMessage}}"></i>
+        </label>
+        <ul class="checkbox" aria-labelledby="label_{{npId}}" role="group">
+            <li>
+                <label for="checkbox_{{npId + $index}}">
+                <input type="checkbox"
+                       id="checkbox_{{npId + $index}}"
+                       name="booleanCheckbox"
+                       ng-required="isRequired()"
+                       ng-change="change()"
+                       ng-click="click()"
+                       boolean-checkbox-model="npSelectedValue"
+                       boolean-checkbox-value="npObjectValue"
+                       ng-disabled="npDisabled"/>
+                    {{npValue}}
+                </label>
+            </li>
+        </ul>
+        <label class="control-label" for="label_{{npId}}" role="alert" ng-if="(formBooleanCheckbox.$dirty || $parent.submitted) && formBooleanCheckbox.$error.required">
+            <i class="fa fa-times-circle-o"></i>
+            {{npRequiredMessage}}
+        </label>
+        <label class="control-label" for="input_{{npId}}" id="{{npId}}_validator"
+          ng-if="npValidatorMessage && showValidatorMessage()"
+          role="alert">
+          <i class="fa fa-times-circle-o"></i>
+          {{npValidatorMessage}}
+      </label>
+</div>

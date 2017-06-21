@@ -1,0 +1,33 @@
+{
+	"name": "boolean-checkbox",
+	"version": "1.0.2",
+	"main": [
+		"./src/scripts/directive/booleanCheckboxDirective.js",
+		"./src/scripts/directive/booleanCheckboxModel.js"
+	],
+	"dependencies": {
+		"angular": "~1.2.26",
+		"font-awesome": "~4.2.0",
+		"jquery": "~2.1.1",
+		"infraestrutura": "~1.0.2"
+	},
+	"devDependencies": {
+		"bootstrap": "~3.2.0",
+		"angular-mocks": "~1.2.26",
+		"angular-scenario": "~1.2.26"
+	},
+	"authors": [
+		"raphael"
+	],
+	"description": "Componente checkbox",
+	"license": "",
+	"private": true,
+	"ignore": [
+		"**/.*",
+		"node_modules",
+		"bower_components",
+		"src/bower_components",
+		"test",
+		"tests"
+	]
+}
